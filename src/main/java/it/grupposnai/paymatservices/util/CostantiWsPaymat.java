@@ -91,5 +91,7 @@ public interface CostantiWsPaymat {
 	public static final String CALLERS_NO_IMPORTO_DESC_TAGLI = "callers_no_importo_desc_tagli";
 	
 	public static final String PRENOTAZIONESERVICE_WSDL_URL = "prenotazioneservice.wsdlUrl";
+
+    public static final String MOCK_RESPONSE_FASTWEB = "mock.response.fastweb";
 	
 }
