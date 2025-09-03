@@ -115,7 +115,7 @@ public class PaymatServiceSoap12Impl implements PaymatServiceSoap {
         if (file.exists()) {
             try {
                 response = mapper.readValue(file,ConfirmRicaricaTelefonicaResponse2.class);
-            } catch (IOException e) {
+            } catch (Exception e) {
                 response.setResultCode("100");
                 response.setResultDesc("Impostazioni mock mancanti " + e.getMessage());
             }

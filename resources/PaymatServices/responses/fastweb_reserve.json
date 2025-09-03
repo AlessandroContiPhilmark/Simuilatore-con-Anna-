@@ -1,0 +1,8 @@
+{
+    "callerId": "exampleCallerId",
+    "requestId": "exampleRequestId",
+    "resultCode": "200",
+    "resultDesc": "Success",
+    "idTranPaymat": "exampleIdTranPaymat",
+    "idTranEsterno": "exampleIdTranEsterno"
+}

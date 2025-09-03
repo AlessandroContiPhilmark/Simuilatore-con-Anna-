@@ -1,0 +1,45 @@
+{
+    "callerId": "exampleCallerId",
+    "requestId": "exampleRequestId",
+    "resultCode": "200",
+    "resultDesc": "Success",
+    "idTranPaymat": "exampleIdTranPaymat",
+    "ticket": {
+        "logoAziendale": "exampleLogo",
+        "nomeEsercente": "exampleNomeEsercente",
+        "descrizioneProdotto": "exampleDescrizioneProdotto",
+        "dataOraTransazione": "2025-09-02T16:00:00",
+        "esitoTransazione": "Success",
+        "logoBrand": "exampleBrandLogo",
+        "importoFacciale": "100.00",
+        "noteTransazione": "exampleNote",
+        "linkSitoWeb": "http://example.com",
+        "numeroAssistenza": "800123456",
+        "footerScontrino": "exampleFooter",
+        "idTerminale": "1234567890",
+        "abi": "12345",
+        "cab": "54321",
+        "numeroOperazione": "123456",
+        "idAutorizzazione": "auth123",
+        "idTranPaymat": "tranPaymat123",
+        "numeroTelefonico": "1234567890",
+        "pin": "1234",
+        "variabile": "exampleVariabile",
+        "tasse": [
+            {
+                "tipoTassa": "IVA",
+                "importoTassa": "22.00"
+            },
+            {
+                "tipoTassa": "Service Charge",
+                "importoTassa": "5.00"
+            }
+        ],
+        "eseguitoDa": "user123",
+        "numeroIPPS": "12345",
+        "dataScadenza": "2025-12-31",
+        "causale": "exampleCausale",
+        "beneficiario": "exampleBeneficiario",
+        "serialNumber": "SN1234567890"
+    }
+}
