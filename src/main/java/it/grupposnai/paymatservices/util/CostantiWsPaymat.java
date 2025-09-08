@@ -92,9 +92,9 @@ public interface CostantiWsPaymat {
 	
 	public static final String PRENOTAZIONESERVICE_WSDL_URL = "prenotazioneservice.wsdlUrl";
 
-    public static final String MOCK_RESPONSE_RESERV_FASTWEB = "mock.response.reserv.fastweb";
-    public static final String MOCK_RESPONSE_CONFIRM_FASTWEB = "mock.response.confirm.fastweb";
-    public static final String MOCK_RESPONSE_CANCEL_FASTWEB = "mock.response.cancel.fastweb";
+    public static final String MOCK_RESPONSE_RESERVE = "mock.response.reserve";
+    public static final String MOCK_RESPONSE_CONFIRM = "mock.response.confirm";
+    public static final String MOCK_RESPONSE_CANCEL = "mock.response.cancel";
 
 
 }

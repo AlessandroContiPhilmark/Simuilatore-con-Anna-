@@ -83,20 +83,35 @@ public class PaymatServiceSoap12Impl implements PaymatServiceSoap {
     public ReserveRicaricaTelefonicaResponse2 reserveRicaricaTelefonica(ReserveRicaricaTelefonicaRequest request) {
 
         ReserveRicaricaTelefonicaResponse2 response = new  ReserveRicaricaTelefonicaResponse2();
+        response.setCallerId(request.getCallerId());
+        response.setRequestId(request.getRequestId());
+
+//        if (request.validate() != null) {
+//            LOG.info("Request: " + request);
+//            response.setResultCode("1");
+//            response.setResultDesc(CostantiWsPaymat.VALIDATION_ERROR_DESC + ":" + request.validate());
+//            LOG.info("Response: " + response);
+//            return response;
+//        }
 
         ObjectMapper mapper = new ObjectMapper();
-        String pathMockResponse = Configurazione.INSTANCE.getString(CostantiWsPaymat.MOCK_RESPONSE_RESERV_FASTWEB);
+        String pathMockResponse = Configurazione.INSTANCE.getString(CostantiWsPaymat.MOCK_RESPONSE_RESERVE);
+        String absolutPath = pathMockResponse + request.getBrand() + ".json";
 
-        File file = new File(pathMockResponse);
+        File file = new File(absolutPath);
 
         if (file.exists()) {
+
             try {
                 response = mapper.readValue(file,ReserveRicaricaTelefonicaResponse2.class);
             } catch (IOException e) {
                 response.setResultCode("100");
-                response.setResultDesc("Impostazioni mock mancanti " + e.getMessage());
+                response.setResultDesc("Errore nel recupero dei dati da file " + e.getMessage());
             }
 
+        }else{
+            response.setResultCode("100");
+            response.setResultDesc("File contenente le informazioni mancante.");
         }
 
     return response;
@@ -106,22 +121,37 @@ public class PaymatServiceSoap12Impl implements PaymatServiceSoap {
 
     public ConfirmRicaricaTelefonicaResponse2 confirmRicaricaTelefonica(ConfirmRicaricaTelefonicaRequest request) {
         ConfirmRicaricaTelefonicaResponse2 response = new ConfirmRicaricaTelefonicaResponse2();
+        response.setCallerId(request.getCallerId());
+        response.setRequestId(request.getRequestId());
+
+//        if (request.validate() != null) {
+//            LOG.info("Request: " + request);
+//            response.setResultCode("1");
+//            response.setResultDesc(CostantiWsPaymat.VALIDATION_ERROR_DESC + ":" + request.validate());
+//            LOG.info("Response: " + response);
+//            return response;
+//        }
 
         ObjectMapper mapper = new ObjectMapper();
-        String pathMockResponse = Configurazione.INSTANCE.getString(CostantiWsPaymat.MOCK_RESPONSE_CONFIRM_FASTWEB);
+        String pathMockResponse = Configurazione.INSTANCE.getString(CostantiWsPaymat.MOCK_RESPONSE_CONFIRM);
+        String absolutPath = pathMockResponse + request.getBrand() + ".json";
 
-        File file = new File(pathMockResponse);
+        File file = new File(absolutPath);
 
         if (file.exists()) {
             try {
                 response = mapper.readValue(file,ConfirmRicaricaTelefonicaResponse2.class);
             } catch (Exception e) {
                 response.setResultCode("100");
-                response.setResultDesc("Impostazioni mock mancanti " + e.getMessage());
+                response.setResultDesc("Errore nel recupero dei dati da file " + e.getMessage());
             }
 
+        }else{
+            response.setResultCode("100");
+            response.setResultDesc("File contenente le informazioni mancante.");
         }
-            return response;
+
+        return response;
 
     }
 
@@ -129,9 +159,19 @@ public class PaymatServiceSoap12Impl implements PaymatServiceSoap {
     public CancelRicaricaTelefonicaResponse2 cancelRicaricaTelefonica(CancelRicaricaTelefonicaRequest request) {
 
         CancelRicaricaTelefonicaResponse2 response = new CancelRicaricaTelefonicaResponse2();
+        response.setCallerId(request.getCallerId());
+        response.setRequestId(request.getRequestId());
+
+//        if (request.validate() != null) {
+//            LOG.info("Request: " + request);
+//            response.setResultCode("1");
+//            response.setResultDesc(CostantiWsPaymat.VALIDATION_ERROR_DESC + ":" + request.validate());
+//            LOG.info("Response: " + response);
+//            return response;
+//        }
 
         ObjectMapper mapper = new ObjectMapper();
-        String pathMockResponse = Configurazione.INSTANCE.getString(CostantiWsPaymat.MOCK_RESPONSE_CANCEL_FASTWEB);
+        String pathMockResponse = Configurazione.INSTANCE.getString(CostantiWsPaymat.MOCK_RESPONSE_CANCEL);
 
         File file = new File(pathMockResponse);
 
@@ -140,11 +180,15 @@ public class PaymatServiceSoap12Impl implements PaymatServiceSoap {
                 response = mapper.readValue(file,CancelRicaricaTelefonicaResponse2.class);
             } catch (IOException e) {
                 response.setResultCode("100");
-                response.setResultDesc("Impostazioni mock mancanti " + e.getMessage());
+                response.setResultDesc("Errore nel recupero dei dati da file " + e.getMessage());
             }
 
+        }else{
+            response.setResultCode("100");
+            response.setResultDesc("File contenente le informazioni mancante.");
         }
-            return response;
+
+        return response;
 
     }
 
