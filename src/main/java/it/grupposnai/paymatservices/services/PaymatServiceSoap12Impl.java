@@ -96,7 +96,7 @@ public class PaymatServiceSoap12Impl implements PaymatServiceSoap {
 
         ObjectMapper mapper = new ObjectMapper();
         String pathMockResponse = Configurazione.INSTANCE.getString(CostantiWsPaymat.MOCK_RESPONSE_RESERVE);
-        String absolutPath = pathMockResponse + request.getBrand() + ".json";
+        String absolutPath = pathMockResponse + "_" + request.getBrand() + ".json";
 
         File file = new File(absolutPath);
 
@@ -104,6 +104,8 @@ public class PaymatServiceSoap12Impl implements PaymatServiceSoap {
 
             try {
                 response = mapper.readValue(file,ReserveRicaricaTelefonicaResponse2.class);
+                response.setCallerId(request.getCallerId());
+                response.setRequestId(request.getRequestId());
             } catch (IOException e) {
                 response.setResultCode("100");
                 response.setResultDesc("Errore nel recupero dei dati da file " + e.getMessage());
@@ -134,13 +136,15 @@ public class PaymatServiceSoap12Impl implements PaymatServiceSoap {
 
         ObjectMapper mapper = new ObjectMapper();
         String pathMockResponse = Configurazione.INSTANCE.getString(CostantiWsPaymat.MOCK_RESPONSE_CONFIRM);
-        String absolutPath = pathMockResponse + request.getBrand() + ".json";
+        String absolutPath = pathMockResponse + "_" + request.getBrand() + ".json";
 
         File file = new File(absolutPath);
 
         if (file.exists()) {
             try {
                 response = mapper.readValue(file,ConfirmRicaricaTelefonicaResponse2.class);
+                response.setCallerId(request.getCallerId());
+                response.setRequestId(request.getRequestId());
             } catch (Exception e) {
                 response.setResultCode("100");
                 response.setResultDesc("Errore nel recupero dei dati da file " + e.getMessage());
@@ -178,6 +182,8 @@ public class PaymatServiceSoap12Impl implements PaymatServiceSoap {
         if (file.exists()) {
             try {
                 response = mapper.readValue(file,CancelRicaricaTelefonicaResponse2.class);
+                response.setCallerId(request.getCallerId());
+                response.setRequestId(request.getRequestId());
             } catch (IOException e) {
                 response.setResultCode("100");
                 response.setResultDesc("Errore nel recupero dei dati da file " + e.getMessage());
