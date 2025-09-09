@@ -6,9 +6,7 @@ import java.util.List;
 import it.grupposnai.paymatcore.api.request.header.BaseRequest;
 import it.grupposnai.paymatcore.api.response.header.BaseResponse;
 import it.grupposnai.paymatservices.model.Account;
-import it.grupposnai.paymatservices.model.BollettinoFreccia;
 import it.grupposnai.paymatservices.model.VTransaction;
-import it.grupposnai.paymatservices.model.Voucher;
 import it.grupposnai.paymatservices.model.request.Request;
 import it.grupposnai.paymatservices.model.response.Response;
 
@@ -291,96 +289,6 @@ public class ModelAdapter {
 		return newTassa;
 	}
 
-	/* Ente Cbill */
-
-	/**
-	 * Mappa una lista di oggetti EnteCbill PaymatCore in un array di oggetti EnteCbill PaymatService
-	 * 
-	 * @param list
-	 * @return
-	 */
-	public static it.grupposnai.paymatservices.model.EnteCbill[] getEnteCbillList(List<it.grupposnai.paymatcore.api.response.info.EnteCbill> list) {
-		it.grupposnai.paymatservices.model.EnteCbill[] newList;
-		if (list == null || list.size() == 0)
-			newList = new it.grupposnai.paymatservices.model.EnteCbill[0];
-		else {
-			newList = new it.grupposnai.paymatservices.model.EnteCbill[list.size()];
-			for (int i = 0; i < list.size(); i++) {
-				newList[i] = getEnteCbill(list.get(i));
-			}
-		}
-		return newList;
-	}
-
-	/**
-	 * Mappa un oggetto EnteCbill di PaymatCore in un oggetto Tassa di PaymatService
-	 * 
-	 * @param tassa
-	 * @return
-	 */
-	public static it.grupposnai.paymatservices.model.EnteCbill getEnteCbill(it.grupposnai.paymatcore.api.response.info.EnteCbill ente) {
-		it.grupposnai.paymatservices.model.EnteCbill newEnte = null;
-		if (ente != null) {
-			newEnte = new it.grupposnai.paymatservices.model.EnteCbill();
-			newEnte.setNome(ente.getNome());
-			newEnte.setCodiceSia(ente.getCodiceSia());
-			newEnte.setCodiceCuc(ente.getCuc());
-			newEnte.setIdNazionale(ente.getIdNazionale());
-			newEnte.setAbilitazioneRicercaBollettini(ente.getAbilitazioneRicercaBollettini());
-		}
-		return newEnte;
-	}
-
-	/* Bollettino Cbill */
-
-	/**
-	 * Mappa una lista di oggetti BollettinoCbill PaymatCore in un array di oggetti BollettinoCbill PaymatService
-	 * 
-	 * @param list
-	 * @return
-	 */
-	public static it.grupposnai.paymatservices.model.BollettinoCbill[] getBollettinoCbillList(List<it.grupposnai.paymatcore.api.response.info.BollettinoCbill> list) {
-		it.grupposnai.paymatservices.model.BollettinoCbill[] newList;
-		if (list == null || list.size() == 0)
-			newList = new it.grupposnai.paymatservices.model.BollettinoCbill[0];
-		else {
-			newList = new it.grupposnai.paymatservices.model.BollettinoCbill[list.size()];
-			for (int i = 0; i < list.size(); i++) {
-				newList[i] = getBollettinoCbill(list.get(i));
-			}
-		}
-		return newList;
-	}
-
-	/**
-	 * Mappa un oggetto BollettinoCbill di PaymatCore in un oggetto BollettinoCbill di PaymatService
-	 * 
-	 * @param tassa
-	 * @return
-	 */
-	public static it.grupposnai.paymatservices.model.BollettinoCbill getBollettinoCbill(it.grupposnai.paymatcore.api.response.info.BollettinoCbill bollettino) {
-		it.grupposnai.paymatservices.model.BollettinoCbill newBollettino = null;
-		if (bollettino != null) {
-			newBollettino = new it.grupposnai.paymatservices.model.BollettinoCbill();
-			newBollettino.setDataPagamento(bollettino.getDataPagamento());
-			newBollettino.setIdPagamento(bollettino.getIdPagamento());
-			newBollettino.setIdBanca(bollettino.getIdBanca());
-			newBollettino.setStatusBollettino(bollettino.getStatusBollettino());
-			newBollettino.setIdBollettino(bollettino.getIdBollettino());
-			newBollettino.setImporto(bollettino.getImporto());
-			newBollettino.setIdBollettino2(bollettino.getIdBollettino_2());
-			newBollettino.setValuta(bollettino.getValuta());
-			newBollettino.setReference(bollettino.getReference());
-			newBollettino.setDataScadenza(bollettino.getDataScadenza());
-			newBollettino.setCostoTotaleServizio(bollettino.getCostoTotaleServizio());
-			newBollettino.setCommissioniBollettino(bollettino.getCommissioniBollettino());
-			newBollettino.setCommissioniBancarie(bollettino.getCommissioniBancarie());
-			newBollettino.setIban(bollettino.getIban());
-			newBollettino.setInformazioniAggiuntive(bollettino.getInformazioniAggiuntive());
-		}
-		return newBollettino;
-	}
-
 	/* ALLEGATO */
 
 	/**
@@ -472,162 +380,8 @@ public class ModelAdapter {
 		return newPf;
 	}
 
-	/* ENTE BOLLETTINO */
 
-	/**
-	 * Mappa un oggetto EnteBollettino da PaymatCore a PaymatServices
-	 * 
-	 * @param ente
-	 * @return
-	 */
-	public static it.grupposnai.paymatservices.model.EnteBollettino getEnteBollettino(it.grupposnai.paymatcore.api.response.info.EnteBollettino ente) {
-		it.grupposnai.paymatservices.model.EnteBollettino newEnte = null;
-		if (ente != null) {
-			newEnte = new it.grupposnai.paymatservices.model.EnteBollettino();
-			newEnte.setNome(ente.getNome());
-			newEnte.setNumeroCC(ente.getNumeroCC());
-			newEnte.setNote(ente.getNote());
-			newEnte.setMemoCausale(ente.getMemoCausale());
-			newEnte.setCampiVariabiliBollettinoCliente(getCampoVariabileBollettinoList(ente.getCampiVariabiliBollettinoCliente()));
-			newEnte.setCampiVariabiliBollettinoEnte(getCampoVariabileBollettinoList(ente.getCampiVariabiliBollettinoEnte()));
-			newEnte.setObbligatorietaCodFisPiva(ente.getObbligatorietaCodFisPiva());
-		}
-		return newEnte;
-	}
 
-	public static it.grupposnai.paymatcore.api.response.info.EnteBollettino getEnteBollettino(it.grupposnai.paymatservices.model.EnteBollettino ente) {
-		it.grupposnai.paymatcore.api.response.info.EnteBollettino newEnte = null;
-		if (ente != null) {
-			newEnte = new it.grupposnai.paymatcore.api.response.info.EnteBollettino();
-			newEnte.setNome(ente.getNome());
-			newEnte.setNumeroCC(ente.getNumeroCC());
-			newEnte.setNote(ente.getNote());
-			newEnte.setMemoCausale(ente.getMemoCausale());
-			newEnte.setCampiVariabiliBollettinoCliente(getCampoVariabileBollettinoList(ente.getCampiVariabiliBollettinoCliente()));
-			newEnte.setCampiVariabiliBollettinoEnte(getCampoVariabileBollettinoList(ente.getCampiVariabiliBollettinoEnte()));
-		}
-		return newEnte;
-	}
-
-	/* CAMPO VARIABILE BOLLETTINO */
-
-	/**
-	 * Mappa un array di oggetti CampoVariabileBollettino di PaymatServices in una lista di oggetti CampoVariabileBollettino di PaymatCore
-	 * 
-	 * @param list
-	 * @return
-	 */
-	public static List<it.grupposnai.paymatcore.api.response.info.CampoVariabileBollettino> getCampoVariabileBollettinoList(it.grupposnai.paymatservices.model.CampoVariabileBollettino[] list) {
-		List<it.grupposnai.paymatcore.api.response.info.CampoVariabileBollettino> newList = null;
-		if (list != null && list.length > 0) {
-			newList = new ArrayList<it.grupposnai.paymatcore.api.response.info.CampoVariabileBollettino>();
-			for (it.grupposnai.paymatservices.model.CampoVariabileBollettino element : list) {
-				newList.add(getCampoVariabileBollettino(element));
-			}
-		}
-		return newList;
-	}
-
-	/**
-	 * Mappa una array di oggetti CampoVariabileBollettino di PaymatCore in un array di oggetti CampoVariabileBollettino di PaymatServices
-	 * 
-	 * @param list
-	 * @return
-	 */
-	public static it.grupposnai.paymatservices.model.CampoVariabileBollettino[] getCampoVariabileBollettinoList(it.grupposnai.paymatcore.api.response.info.CampoVariabileBollettino[] list) {
-		it.grupposnai.paymatservices.model.CampoVariabileBollettino[] newList;
-		if (list == null || list.length == 0)
-			newList = new it.grupposnai.paymatservices.model.CampoVariabileBollettino[0];
-		else {
-			newList = new it.grupposnai.paymatservices.model.CampoVariabileBollettino[list.length];
-			for (int i = 0; i < list.length; i++) {
-				newList[i] = getCampoVariabileBollettino(list[i]);
-			}
-		}
-		return newList;
-	}
-
-	/**
-	 * Mappa una lista di oggetti CampoVariabileBollettino di PaymatCore in un array di oggetti CampoVariabileBollettino di PaymatServices
-	 * 
-	 * @param list
-	 * @return
-	 */
-	public static it.grupposnai.paymatservices.model.CampoVariabileBollettino[] getCampoVariabileBollettinoList(List<it.grupposnai.paymatcore.api.response.info.CampoVariabileBollettino> list) {
-		it.grupposnai.paymatservices.model.CampoVariabileBollettino[] newList;
-		if (list == null || list.size() == 0)
-			newList = new it.grupposnai.paymatservices.model.CampoVariabileBollettino[0];
-		else {
-			newList = new it.grupposnai.paymatservices.model.CampoVariabileBollettino[list.size()];
-			for (int i = 0; i < list.size(); i++) {
-				newList[i] = getCampoVariabileBollettino(list.get(i));
-			}
-		}
-		return newList;
-	}
-
-	/**
-	 * Mappa un oggetto CampoVariabileBollettino da PaymatServices a PaymatCore
-	 * 
-	 * @param cvb
-	 * @return
-	 */
-	public static it.grupposnai.paymatcore.api.response.info.CampoVariabileBollettino getCampoVariabileBollettino(it.grupposnai.paymatservices.model.CampoVariabileBollettino cvb) {
-		it.grupposnai.paymatcore.api.response.info.CampoVariabileBollettino newCvb = new it.grupposnai.paymatcore.api.response.info.CampoVariabileBollettino();
-		if (cvb != null) {
-			newCvb = new it.grupposnai.paymatcore.api.response.info.CampoVariabileBollettino();
-			newCvb.setDescrizione(cvb.getDescrizione());
-			newCvb.setLunghezza(cvb.getLunghezza());
-			newCvb.setNome(cvb.getNome());
-			newCvb.setTipo(cvb.getTipo());
-			newCvb.setValore(cvb.getValore());
-		}
-		return newCvb;
-	}
-
-	/**
-	 * Mappa un oggetto CampoVariabileBollettino da PaymatCore a Paymatservices
-	 * 
-	 * @param cvb
-	 * @return
-	 */
-	public static it.grupposnai.paymatservices.model.CampoVariabileBollettino getCampoVariabileBollettino(it.grupposnai.paymatcore.api.response.info.CampoVariabileBollettino cvb) {
-		it.grupposnai.paymatservices.model.CampoVariabileBollettino newCvb = null;
-		if (cvb != null) {
-			newCvb = new it.grupposnai.paymatservices.model.CampoVariabileBollettino();
-			newCvb.setDescrizione(cvb.getDescrizione());
-			newCvb.setLunghezza(cvb.getLunghezza());
-			newCvb.setNome(cvb.getNome());
-			newCvb.setTipo(cvb.getTipo());
-			newCvb.setValore(cvb.getValore());
-		}
-		return newCvb;
-	}
-
-	/* BOLLETTINO */
-
-	/**
-	 * Mappa un oggetto Bollettino da PaymatServices a PaymatCore
-	 * 
-	 * @param bollettino
-	 * @return
-	 */
-	public static it.grupposnai.paymatcore.api.request.prodottiFinanziari.bollettini.Bollettino getBollettino(it.grupposnai.paymatservices.model.Bollettino bollettino) {
-		it.grupposnai.paymatcore.api.request.prodottiFinanziari.bollettini.Bollettino newBollettino = null;
-		if (bollettino != null) {
-			newBollettino = new it.grupposnai.paymatcore.api.request.prodottiFinanziari.bollettini.Bollettino();
-			newBollettino.setNumeroCC(Long.parseLong(bollettino.getNumeroCC()));
-			newBollettino.setInfoAggiuntive(bollettino.getInfoAggiuntive());
-			newBollettino.setImportoVersamento(bollettino.getImportoVersamento());
-			newBollettino.setIdentificativoBollettino(bollettino.getIdentificativoBollettino());
-			newBollettino.setCodiceBollettino(bollettino.getCodiceBollettino());
-			newBollettino.setCausaleVersamento(bollettino.getCausaleVersamento());
-			newBollettino.setCampiVariabiliBollettinoCliente(ModelAdapter.getCampoVariabileBollettinoList(bollettino.getCampiVariabiliBollettinoCliente()));
-			newBollettino.setCampiVariabiliBollettinoEnte(ModelAdapter.getCampoVariabileBollettinoList(bollettino.getCampiVariabiliBollettinoEnte()));
-		}
-		return newBollettino;
-	}
-	
 	/* ACCOUNT CONTO GIOCO */
 
 	/**
@@ -650,49 +404,8 @@ public class ModelAdapter {
 		}
 		return newA;
 	}
-	
-	/* VOUCHER */
-	
-	/**
-	 * Mappa una lista di oggetti Voucher da PaymatCore a PaymatServices
-	 * @param list
-	 * @return
-	 */
-	public static it.grupposnai.paymatservices.model.Voucher[] getVoucherList(List<it.grupposnai.paymatcore.api.model.Voucher> list) {
-		it.grupposnai.paymatservices.model.Voucher[] newList;
-		if (list == null || list.size() == 0)
-			newList = new it.grupposnai.paymatservices.model.Voucher[0];
-		else {
-			newList = new it.grupposnai.paymatservices.model.Voucher[list.size()];
-			for (int i = 0; i < list.size(); i++) {
-				newList[i] = getVoucher(list.get(i));
-			}
-		}
-		return newList;
-	}
 
-	/**
-	 * Mappa un oggetto Voucher da PaymatCore a PaymatServices
-	 * @param v
-	 * @return
-	 */
-	public static it.grupposnai.paymatservices.model.Voucher getVoucher(it.grupposnai.paymatcore.api.model.Voucher v) {
-		it.grupposnai.paymatservices.model.Voucher newV = null;
-		if (v != null) {
-			newV = new Voucher();
-			newV.setCodiceVoucher(v.getCodiceVoucher());
-			newV.setCodTipoDoc(v.getCodTipoDoc());
-			newV.setDataEmissione(v.getDataEmissione());
-			newV.setDataScadenza(v.getDataScadenza());
-			newV.setDescStato(v.getDescStato());
-			newV.setIdTran(v.getIdTran());
-			newV.setIdTranCsmf(v.getIdTranCsmf());
-			newV.setNumDoc(v.getNumDoc());
-			newV.setStato(v.getStato());
-			newV.setValore(v.getValore());
-		}
-		return newV;
-	}
+
 	
 	/* VTransaction */
 	
@@ -772,33 +485,6 @@ public class ModelAdapter {
 		response.setRequestId(coreResponse.getRequestId());
 		response.setResultCode(coreResponse.getResultCode());
 		response.setResultDesc(coreResponse.getResultDesc());
-	}
-	
-	/* BOLLETTINO FRECCIA*/
-
-	/**
-	 * Mappa un oggetto BollettinoFreccia da PaymatServices a PaymatCore
-	 * 
-	 * @param bollettinoFreccia
-	 * @return
-	 */
-	
-	public static it.grupposnai.paymatcore.api.request.prodottiFinanziari.bollettinoFreccia.BollettinoFreccia getBollettinoFreccia(
-			BollettinoFreccia bollettinoFreccia) {
-		it.grupposnai.paymatcore.api.request.prodottiFinanziari.bollettinoFreccia.BollettinoFreccia newBollettinoFreccia = null;
-		if (bollettinoFreccia != null) {
-			newBollettinoFreccia = new it.grupposnai.paymatcore.api.request.prodottiFinanziari.bollettinoFreccia.BollettinoFreccia();
-			newBollettinoFreccia.setCausaleVersamento(bollettinoFreccia.getCausaleVersamento());
-			newBollettinoFreccia.setCinImporto(bollettinoFreccia.getCinImporto());
-			newBollettinoFreccia.setCinComplessivo(bollettinoFreccia.getCinComplessivo());
-			newBollettinoFreccia.setCinCodiceIdentificativo(bollettinoFreccia.getCinCodiceIdentificativo());
-			newBollettinoFreccia.setCodiceBollettino(bollettinoFreccia.getCodiceBollettino());
-			newBollettinoFreccia.setIban(bollettinoFreccia.getIban());
-			newBollettinoFreccia.setCodiceEsenzione(bollettinoFreccia.getCodiceEsenzione());
-			newBollettinoFreccia.setImportoVersamento(bollettinoFreccia.getImportoVersamento());
-
-		}
-		return newBollettinoFreccia;
 	}
 	
 

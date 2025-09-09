@@ -3,7 +3,6 @@ package it.grupposnai.paymatservices.model;
 
 import javax.xml.bind.annotation.XmlRegistry;
 
-import it.grupposnai.paymatservices.model.request.pin.ReserveAcquistoPinRequest;
 import it.grupposnai.paymatservices.model.request.ricarica.CancelRicaricaTelefonica;
 import it.grupposnai.paymatservices.model.request.ricarica.CancelRicaricaTelefonicaRequest;
 import it.grupposnai.paymatservices.model.request.ricarica.ConfirmRicaricaTelefonica;
@@ -15,7 +14,6 @@ import it.grupposnai.paymatservices.model.request.ricarica.InfoTagliRicariche;
 import it.grupposnai.paymatservices.model.request.ricarica.InfoTaglioRicaricheRequest;
 import it.grupposnai.paymatservices.model.request.ricarica.ReserveRicaricaTelefonica;
 import it.grupposnai.paymatservices.model.request.ricarica.ReserveRicaricaTelefonicaRequest;
-import it.grupposnai.paymatservices.model.response.pin.ReserveAcquistoPinResponse;
 import it.grupposnai.paymatservices.model.response.ricarica.ArrayOfBrand;
 import it.grupposnai.paymatservices.model.response.ricarica.ArrayOfTaglio;
 import it.grupposnai.paymatservices.model.response.ricarica.CancelRicaricaTelefonicaResponse;
@@ -273,12 +271,5 @@ public class ObjectFactory {
         return new Taglio();
     }
     
-    public ReserveAcquistoPinRequest createReserveAcquistoPinRequest() {
-    	return new ReserveAcquistoPinRequest();
-    }
-    
-    public ReserveAcquistoPinResponse createReserveAcquistoPinResponse() {
-    	return new ReserveAcquistoPinResponse();
-    }
 
 }

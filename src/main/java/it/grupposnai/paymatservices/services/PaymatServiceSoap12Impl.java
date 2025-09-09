@@ -2,22 +2,12 @@ package it.grupposnai.paymatservices.services;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import it.cogetech.lib.common.util.Configurazione;
-import it.cogetech.lib.common.util.IpAddress;
-import it.cogetech.lib.common.util.XmlSerializer;
-import it.cogetech.lib.db.util.CostantiDB;
 import it.grupposnai.paymatcore.api.PaymatCoreApi;
-import it.grupposnai.paymatservices.AuditLogDelegate;
 import it.grupposnai.paymatservices.adapter.*;
 import it.grupposnai.paymatservices.kafka.KafkaInterceptor;
 import it.grupposnai.paymatservices.model.request.generali.*;
-import it.grupposnai.paymatservices.model.request.pin.*;
-import it.grupposnai.paymatservices.model.request.prodottiFinanziari.bollettino.*;
-import it.grupposnai.paymatservices.model.request.prodottiFinanziari.cbill.*;
 import it.grupposnai.paymatservices.model.request.ricarica.*;
 import it.grupposnai.paymatservices.model.response.generali.*;
-import it.grupposnai.paymatservices.model.response.pin.*;
-import it.grupposnai.paymatservices.model.response.prodottiFinanziari.bollettino.*;
-import it.grupposnai.paymatservices.model.response.prodottiFinanziari.cbill.*;
 import it.grupposnai.paymatservices.model.response.ricarica.*;
 import it.grupposnai.paymatservices.util.CostantiWsPaymat;
 import org.apache.log4j.Logger;
@@ -26,13 +16,10 @@ import javax.annotation.Resource;
 import javax.interceptor.Interceptors;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
-import javax.servlet.http.HttpServletRequest;
 import javax.xml.ws.BindingType;
 import javax.xml.ws.WebServiceContext;
-import javax.xml.ws.handler.MessageContext;
 import java.io.File;
 import java.io.IOException;
-import java.util.Map;
 
 
 /**

@@ -1,2 +1,0 @@
-@javax.xml.bind.annotation.XmlSchema(namespace = "http://ws.paymatservizi.it/", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
-package it.grupposnai.paymatservices.model.response.pin;
