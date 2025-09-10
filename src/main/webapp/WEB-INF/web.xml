@@ -6,7 +6,7 @@
 	</welcome-file-list>	
 	<servlet>
 		<servlet-name>PaymatServiceSoap12Impl</servlet-name>
-		<servlet-class>it.grupposnai.paymatservices.services.PaymatServiceSoap12Impl</servlet-class>
+		<servlet-class>it.grupposnai.simulatore.services.PaymatServiceSoap12Impl</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>PaymatServiceSoap12Impl</servlet-name>
@@ -19,7 +19,7 @@
 	
 	<listener>
 		<listener-class>
-             it.grupposnai.paymatservices.StartUpListener
+            it.grupposnai.simulatore.StartUpListener
         </listener-class>
 	</listener>
 	

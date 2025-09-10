@@ -1,8 +1,8 @@
 package test.dao;
 
 import it.cogetech.lib.db.util.PoollableDatasource;
-import it.grupposnai.paymatservices.persistence.WsAuditDao;
-import it.grupposnai.paymatservices.util.DataSourceManager;
+import it.grupposnai.simulatore.persistence.WsAuditDao;
+import it.grupposnai.simulatore.util.DataSourceManager;
 
 
 public class WsAuditDaoTest {
