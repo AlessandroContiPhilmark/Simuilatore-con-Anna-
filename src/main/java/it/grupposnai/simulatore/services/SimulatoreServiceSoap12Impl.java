@@ -72,9 +72,18 @@ public class SimulatoreServiceSoap12Impl implements SimulatoreServiceSoap {
                 response.setResultDesc("Errore nel recupero dei dati da file " + e.getMessage());
             }
 
-        }else{
-            response.setResultCode("100");
-            response.setResultDesc("File contenente le informazioni mancante.");
+        }else {
+            try {
+                absolutPath = pathMockResponse + "_default.json";
+                file = new File(absolutPath);
+
+                response = mapper.readValue(file,ReserveRicaricaTelefonicaResponse2.class);
+                response.setCallerId(request.getCallerId());
+                response.setRequestId(request.getRequestId());
+            } catch (IOException e) {
+                response.setResultCode("100");
+                response.setResultDesc("Errore nel recupero dei dati da file " + e.getMessage());
+            }
         }
 
     return response;
@@ -112,8 +121,17 @@ public class SimulatoreServiceSoap12Impl implements SimulatoreServiceSoap {
             }
 
         }else{
-            response.setResultCode("100");
-            response.setResultDesc("File contenente le informazioni mancante.");
+            try {
+                absolutPath = pathMockResponse + "_default.json";
+                file = new File(absolutPath);
+
+                response = mapper.readValue(file,ConfirmRicaricaTelefonicaResponse2.class);
+                response.setCallerId(request.getCallerId());
+                response.setRequestId(request.getRequestId());
+            } catch (IOException e) {
+                response.setResultCode("100");
+                response.setResultDesc("Errore nel recupero dei dati da file " + e.getMessage());
+            }
         }
 
         return response;
