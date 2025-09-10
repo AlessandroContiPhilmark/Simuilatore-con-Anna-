@@ -24,7 +24,7 @@ import it.grupposnai.simulatore.model.response.ricarica.ReserveRicaricaTelefonic
  */
 @WebService(targetNamespace = "http://ws.paymatservizi.it/", name = "PaymatServiceSoap")
 @XmlSeeAlso({ObjectFactory.class})
-public interface PaymatServiceSoap {
+public interface SimulatoreServiceSoap {
 
     // Metodi autogenerati, ereditati dal wsdl della versione .net di PaymatServices
 

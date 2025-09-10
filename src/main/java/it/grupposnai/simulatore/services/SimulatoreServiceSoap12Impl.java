@@ -4,10 +4,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import it.cogetech.lib.common.util.Configurazione;
 import it.grupposnai.paymatcore.api.PaymatCoreApi;
 import it.grupposnai.simulatore.kafka.KafkaInterceptor;
-import it.grupposnai.simulatore.model.request.generali.*;
-import it.grupposnai.simulatore.model.request.ricarica.*;
-import it.grupposnai.simulatore.model.response.generali.*;
-import it.grupposnai.simulatore.model.response.ricarica.*;
 import it.grupposnai.simulatore.model.request.ricarica.CancelRicaricaTelefonicaRequest;
 import it.grupposnai.simulatore.model.request.ricarica.ConfirmRicaricaTelefonicaRequest;
 import it.grupposnai.simulatore.model.request.ricarica.ReserveRicaricaTelefonicaRequest;
@@ -34,11 +30,11 @@ import java.io.IOException;
 @Interceptors(KafkaInterceptor.class)
 @javax.jws.WebService(targetNamespace = "http://ws.paymatservizi.it/")
 @BindingType(value = "http://www.w3.org/2003/05/soap/bindings/HTTP/")
-public class PaymatServiceSoap12Impl implements PaymatServiceSoap {
+public class SimulatoreServiceSoap12Impl implements SimulatoreServiceSoap {
 
     @Resource
     WebServiceContext context;
-    private static final Logger LOG = Logger.getLogger(PaymatServiceSoap12Impl.class.getName());
+    private static final Logger LOG = Logger.getLogger(SimulatoreServiceSoap12Impl.class.getName());
     private PaymatCoreApi paymatCoreApi;
     private static final Integer ID_BRAND_FASTWEB = 1;
 

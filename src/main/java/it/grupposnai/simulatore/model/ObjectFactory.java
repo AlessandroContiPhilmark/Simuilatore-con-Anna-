@@ -3,18 +3,12 @@ package it.grupposnai.simulatore.model;
 
 import javax.xml.bind.annotation.XmlRegistry;
 
-import it.grupposnai.simulatore.model.request.ricarica.CancelRicaricaTelefonica;
 import it.grupposnai.simulatore.model.request.ricarica.CancelRicaricaTelefonicaRequest;
-import it.grupposnai.simulatore.model.request.ricarica.ConfirmRicaricaTelefonica;
 import it.grupposnai.simulatore.model.request.ricarica.ConfirmRicaricaTelefonicaRequest;
-import it.grupposnai.simulatore.model.request.ricarica.ReserveRicaricaTelefonica;
 import it.grupposnai.simulatore.model.request.ricarica.ReserveRicaricaTelefonicaRequest;
-import it.grupposnai.simulatore.model.response.ricarica.CancelRicaricaTelefonicaResponse;
 import it.grupposnai.simulatore.model.response.ricarica.CancelRicaricaTelefonicaResponse2;
-import it.grupposnai.simulatore.model.response.ricarica.ConfirmRicaricaTelefonicaResponse;
 import it.grupposnai.simulatore.model.response.ricarica.ConfirmRicaricaTelefonicaResponse2;
 import it.grupposnai.simulatore.model.response.ricarica.GenericResponse;
-import it.grupposnai.simulatore.model.response.ricarica.ReserveRicaricaTelefonicaResponse;
 import it.grupposnai.simulatore.model.response.ricarica.ReserveRicaricaTelefonicaResponse2;
 import it.grupposnai.simulatore.model.response.ricarica.Ticket;
 
@@ -45,27 +39,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ReserveRicaricaTelefonica }
-     * 
-     */
-    public ReserveRicaricaTelefonica createReserveRicaricaTelefonica() {
-        return new ReserveRicaricaTelefonica();
-    }
-
-    /**
      * Create an instance of {@link ReserveRicaricaTelefonicaRequest }
      * 
      */
     public ReserveRicaricaTelefonicaRequest createReserveRicaricaTelefonicaRequest() {
         return new ReserveRicaricaTelefonicaRequest();
-    }
-
-    /**
-     * Create an instance of {@link ReserveRicaricaTelefonicaResponse }
-     * 
-     */
-    public ReserveRicaricaTelefonicaResponse createReserveRicaricaTelefonicaResponse() {
-        return new ReserveRicaricaTelefonicaResponse();
     }
 
     /**
@@ -77,27 +55,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ConfirmRicaricaTelefonica }
-     * 
-     */
-    public ConfirmRicaricaTelefonica createConfirmRicaricaTelefonica() {
-        return new ConfirmRicaricaTelefonica();
-    }
-
-    /**
      * Create an instance of {@link ConfirmRicaricaTelefonicaRequest }
      * 
      */
     public ConfirmRicaricaTelefonicaRequest createConfirmRicaricaTelefonicaRequest() {
         return new ConfirmRicaricaTelefonicaRequest();
-    }
-
-    /**
-     * Create an instance of {@link ConfirmRicaricaTelefonicaResponse }
-     * 
-     */
-    public ConfirmRicaricaTelefonicaResponse createConfirmRicaricaTelefonicaResponse() {
-        return new ConfirmRicaricaTelefonicaResponse();
     }
 
     /**
@@ -109,27 +71,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link CancelRicaricaTelefonica }
-     * 
-     */
-    public CancelRicaricaTelefonica createCancelRicaricaTelefonica() {
-        return new CancelRicaricaTelefonica();
-    }
-
-    /**
      * Create an instance of {@link CancelRicaricaTelefonicaRequest }
      * 
      */
     public CancelRicaricaTelefonicaRequest createCancelRicaricaTelefonicaRequest() {
         return new CancelRicaricaTelefonicaRequest();
-    }
-
-    /**
-     * Create an instance of {@link CancelRicaricaTelefonicaResponse }
-     * 
-     */
-    public CancelRicaricaTelefonicaResponse createCancelRicaricaTelefonicaResponse() {
-        return new CancelRicaricaTelefonicaResponse();
     }
 
     /**
