@@ -157,21 +157,7 @@ public class ObjectFactory {
         return new Ticket();
     }
 
-    /**
-     * Create an instance of {@link Brand }
-     * 
-     */
-    public Brand createBrand() {
-        return new Brand();
-    }
 
-    /**
-     * Create an instance of {@link Taglio }
-     * 
-     */
-    public Taglio createTaglio() {
-        return new Taglio();
-    }
     
 
 }
